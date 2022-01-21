@@ -51,11 +51,5 @@ type Header struct {
 	CustomerTaxClassification1     string `json:"CustomerTaxClassification1"`
 	TotalCreditCheckStatus         string `json:"TotalCreditCheckStatus"`
 	BillingDocumentDate            string `json:"BillingDocumentDate"`
-	ToHeaderPartner struct {
-		ToHeaderPartnerResults []HeaderPartner `json:"results"`
-		} `json:"to_Partner"`
-	ToItem          struct {
-		ToItemResults []Item `json:"results"`
-		} `json:"to_Item"`
 	} `json:"d"`
 }

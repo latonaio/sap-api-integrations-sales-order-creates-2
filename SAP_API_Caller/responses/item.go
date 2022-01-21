@@ -49,11 +49,11 @@ type Item struct {
 	SDProcessStatus             string `json:"SDProcessStatus"`
 	DeliveryStatus              string `json:"DeliveryStatus"`
 	OrderRelatedBillingStatus   string `json:"OrderRelatedBillingStatus"`
-	ToItemPricingElement struct {
-		ToItemPricingElementResults []ItemPricingElement `json:"results"`
-	    } `json:"to_PricingElement"`
-	ToItemScheduleLine   struct {
-		ToItemScheduleLineResults []ItemScheduleLine `json:"results"`
-	    } `json:"to_ScheduleLine"`
+//	ToItemPricingElement struct {
+//		ToItemPricingElementResults []ItemPricingElement `json:"results"`
+//	    } `json:"to_PricingElement"`
+//	ToItemScheduleLine   struct {
+//		ToItemScheduleLineResults []ItemScheduleLine `json:"results"`
+//	    } `json:"to_ScheduleLine"`
 	} `json:"d"`
 }

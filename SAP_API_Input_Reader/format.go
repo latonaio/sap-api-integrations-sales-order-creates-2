@@ -24,14 +24,14 @@ func (sdc *SDC) ConvertToHeader() *requests.Header {
 		CustomerPurchaseOrderDate:      data.CustomerPurchaseOrderDate,
 		SalesOrderDate:                 data.SalesOrderDate,
 		TotalNetAmount:                 data.TotalNetAmount,
-		OverallDeliveryStatus:          data.OverallDeliveryStatus,
-		TotalBlockStatus:               data.TotalBlockStatus,
-		OverallOrdReltdBillgStatus:     data.OverallOrdReltdBillgStatus,
-		OverallSDDocReferenceStatus:    data.OverallSDDocReferenceStatus,
+//		OverallDeliveryStatus:          data.OverallDeliveryStatus,
+//		TotalBlockStatus:               data.TotalBlockStatus,
+//		OverallOrdReltdBillgStatus:     data.OverallOrdReltdBillgStatus,
+//		OverallSDDocReferenceStatus:    data.OverallSDDocReferenceStatus,
 		TransactionCurrency:            data.TransactionCurrency,
 		SDDocumentReason:               data.SDDocumentReason,
 		PricingDate:                    data.PricingDate,
-		PriceDetnExchangeRate:          data.PriceDetnExchangeRate,
+//		PriceDetnExchangeRate:          data.PriceDetnExchangeRate,
 		RequestedDeliveryDate:          data.RequestedDeliveryDate,
 		ShippingCondition:              data.ShippingCondition,
 		CompleteDeliveryIsDefined:      data.CompleteDeliveryIsDefined,
@@ -55,32 +55,7 @@ func (sdc *SDC) ConvertToHeader() *requests.Header {
 		AdditionalCustomerGroup5:       data.AdditionalCustomerGroup5,
 		CustomerTaxClassification1:     data.CustomerTaxClassification1,
 		TotalCreditCheckStatus:         data.TotalCreditCheckStatus,
-		BillingDocumentDate:            data.BillingDocumentDate,
-		ToHeaderPartner: &struct {
-			ToHeaderPartnerResults []*requests.HeaderPartner `json:"results"`
-		}{
-			ToHeaderPartnerResults: []*requests.HeaderPartner{
-				sdc.ConvertToHeaderPartner(),
-			},
-		},
-		ToItem: &struct {
-			ToItemResults []*requests.Item `json:"results"`
-		}{
-			ToItemResults: []*requests.Item{
-				sdc.ConvertToItem(),
-			},
-		},
-	}
-}
-
-func (sdc *SDC) ConvertToHeaderPartner() *requests.HeaderPartner {
-	dataSalesOrder := sdc.SalesOrder
-	data := sdc.SalesOrder.HeaderPartner
-	return &requests.HeaderPartner{
-		SalesOrder:      dataSalesOrder.SalesOrder,
-		PartnerFunction: data.PartnerFunction,
-		Customer:        data.Customer,
-		Supplier:        data.Supplier,
+//		BillingDocumentDate:            data.BillingDocumentDate,
 	}
 }
 
@@ -96,11 +71,11 @@ func (sdc *SDC) ConvertToItem() *requests.Item {
 		Material:                    data.Material,
 		MaterialByCustomer:          data.MaterialByCustomer,
 		PricingDate:                 data.PricingDate,
-		BillingPlan:                 data.BillingPlan,
+//		BillingPlan:                 data.BillingPlan,
 		RequestedQuantity:           data.RequestedQuantity,
 		RequestedQuantityUnit:       data.RequestedQuantityUnit,
-		OrderQuantityUnit:           data.OrderQuantityUnit,
-		ConfdDelivQtyInOrderQtyUnit: data.ConfdDelivQtyInOrderQtyUnit,
+//		OrderQuantityUnit:           data.OrderQuantityUnit,
+//		ConfdDelivQtyInOrderQtyUnit: data.ConfdDelivQtyInOrderQtyUnit,
 		ItemGrossWeight:             data.ItemGrossWeight,
 		ItemNetWeight:               data.ItemNetWeight,
 		ItemWeightUnit:              data.ItemWeightUnit,
@@ -110,7 +85,7 @@ func (sdc *SDC) ConvertToItem() *requests.Item {
 		NetAmount:                   data.NetAmount,
 		MaterialGroup:               data.MaterialGroup,
 		MaterialPricingGroup:        data.MaterialPricingGroup,
-		BillingDocumentDate:         data.BillingDocumentDate,
+//		BillingDocumentDate:         data.BillingDocumentDate,
 		Batch:                       data.Batch,
 		ProductionPlant:             data.ProductionPlant,
 		StorageLocation:             data.StorageLocation,
@@ -119,10 +94,10 @@ func (sdc *SDC) ConvertToItem() *requests.Item {
 		ShippingType:                data.ShippingType,
 		DeliveryPriority:            data.DeliveryPriority,
 		IncotermsClassification:     data.IncotermsClassification,
-		TaxAmount:                   data.TaxAmount,
+//		TaxAmount:                   data.TaxAmount,
 		ProductTaxClassification1:   data.ProductTaxClassification1,
 		MatlAccountAssignmentGroup:  data.MatlAccountAssignmentGroup,
-		CostAmount:                  data.CostAmount,
+//		CostAmount:                  data.CostAmount,
 		CustomerPaymentTerms:        data.CustomerPaymentTerms,
 		CustomerGroup:               data.CustomerGroup,
 		SalesDocumentRjcnReason:     data.SalesDocumentRjcnReason,
@@ -135,71 +110,5 @@ func (sdc *SDC) ConvertToItem() *requests.Item {
 		SDProcessStatus:             data.SDProcessStatus,
 		DeliveryStatus:              data.DeliveryStatus,
 		OrderRelatedBillingStatus:   data.OrderRelatedBillingStatus,
-		ToItemPricingElement: &struct {
-			ToItemPricingElementResults []*requests.ItemPricingElement `json:"results"`
-		}{
-			ToItemPricingElementResults: []*requests.ItemPricingElement{
-				sdc.ConvertToItemPricingElement(),
-			},
-		},
-		ToItemScheduleLine: &struct {
-			ToItemScheduleLineResults []*requests.ItemScheduleLine `json:"results"`
-		}{
-			ToItemScheduleLineResults: []*requests.ItemScheduleLine{
-				sdc.ConvertToItemScheduleLine(),
-			},
-		},
-	}
-}
-
-func (sdc *SDC) ConvertToItemPricingElement() *requests.ItemPricingElement {
-	dataSalesOrder := sdc.SalesOrder
-	dataSalesOrderItem := sdc.SalesOrder.SalesOrderItem
-	data := sdc.SalesOrder.SalesOrderItem.ItemPricingElement
-	return &requests.ItemPricingElement{
-		SalesOrder:                     dataSalesOrder.SalesOrder,
-		SalesOrderItem:                 dataSalesOrderItem.SalesOrderItem,
-		PricingProcedureStep:           data.PricingProcedureStep,
-		PricingProcedureCounter:        data.PricingProcedureCounter,
-		ConditionType:                  data.ConditionType,
-		PriceConditionDeterminationDte: data.PriceConditionDeterminationDte,
-		ConditionCalculationType:       data.ConditionCalculationType,
-		ConditionBaseValue:             data.ConditionBaseValue,
-		ConditionRateValue:             data.ConditionRateValue,
-		ConditionCurrency:              data.ConditionCurrency,
-		ConditionQuantity:              data.ConditionQuantity,
-		ConditionQuantityUnit:          data.ConditionQuantityUnit,
-		ConditionCategory:              data.ConditionCategory,
-		PricingScaleType:               data.PricingScaleType,
-		ConditionRecord:                data.ConditionRecord,
-		ConditionSequentialNumber:      data.ConditionSequentialNumber,
-		TaxCode:                        data.TaxCode,
-		ConditionAmount:                data.ConditionAmount,
-		TransactionCurrency:            data.TransactionCurrency,
-		PricingScaleBasis:              data.PricingScaleBasis,
-		ConditionScaleBasisValue:       data.ConditionScaleBasisValue,
-		ConditionScaleBasisUnit:        data.ConditionScaleBasisUnit,
-		ConditionScaleBasisCurrency:    data.ConditionScaleBasisCurrency,
-		ConditionIsManuallyChanged:     data.ConditionIsManuallyChanged,
-	}
-}
-
-func (sdc *SDC) ConvertToItemScheduleLine() *requests.ItemScheduleLine {
-	dataSalesOrder := sdc.SalesOrder
-	dataSalesOrderItem := sdc.SalesOrder.SalesOrderItem
-	data := sdc.SalesOrder.SalesOrderItem.ItemScheduleLine
-	return &requests.ItemScheduleLine{
-		SalesOrder:                    dataSalesOrder.SalesOrder,
-		SalesOrderItem:                dataSalesOrderItem.SalesOrderItem,
-		ScheduleLine:                  data.ScheduleLine,
-		RequestedDeliveryDate:         data.RequestedDeliveryDate,
-		ConfirmedDeliveryDate:         data.ConfirmedDeliveryDate,
-		OrderQuantityUnit:             data.OrderQuantityUnit,
-		ScheduleLineOrderQuantity:     data.ScheduleLineOrderQuantity,
-		ConfdOrderQtyByMatlAvailCheck: data.ConfdOrderQtyByMatlAvailCheck,
-		DeliveredQtyInOrderQtyUnit:    data.DeliveredQtyInOrderQtyUnit,
-		OpenConfdDelivQtyInOrdQtyUnit: data.OpenConfdDelivQtyInOrdQtyUnit,
-		CorrectedQtyInOrderQtyUnit:    data.CorrectedQtyInOrderQtyUnit,
-		DelivBlockReasonForSchedLine:  data.DelivBlockReasonForSchedLine,
 	}
 }

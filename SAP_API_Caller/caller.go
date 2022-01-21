@@ -2,6 +2,7 @@ package sap_api_caller
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"sap-api-integrations-sales-order-creates/SAP_API_Caller/requests"
@@ -31,8 +32,8 @@ func NewSAPAPICaller(baseUrl, sapClientNumber string, postClient *sap_api_post_h
 }
 
 func (c *SAPAPICaller) AsyncPostSalesOrder(
-	header             *requests.Header,
-	item               *requests.Item,
+	header *requests.Header,
+	item *requests.Item,
 	accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
@@ -44,10 +45,10 @@ func (c *SAPAPICaller) AsyncPostSalesOrder(
 				wg.Done()
 			}()
 		case "Item":
-				func() {
-					c.Item(item)
-					wg.Done()
-				}()
+			func() {
+				c.Item(item)
+				wg.Done()
+			}()
 		default:
 			wg.Done()
 		}
@@ -90,7 +91,8 @@ func (c *SAPAPICaller) callSalesOrderSrvAPIRequirementHeader(api string, header 
 }
 
 func (c *SAPAPICaller) Item(item *requests.Item) {
-	outputDataItem, err := c.callSalesOrderSrvAPIRequirementItem("A_SalesOrderItem", item)
+	url := fmt.Sprintf("A_SalesOrder('%s')/to_Item", item.SalesOrder)
+	outputDataItem, err := c.callSalesOrderSrvAPIRequirementItem(url, item)
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -103,6 +105,7 @@ func (c *SAPAPICaller) callSalesOrderSrvAPIRequirementItem(api string, item *req
 	if err != nil {
 		return nil, xerrors.Errorf("API request error: %w", err)
 	}
+
 	url := strings.Join([]string{c.baseURL, "API_SALES_ORDER_SRV", api}, "/")
 	params := c.addQuerySAPClient(map[string]string{})
 	resp, err := c.postClient.POST(url, params, string(body))
@@ -111,6 +114,7 @@ func (c *SAPAPICaller) callSalesOrderSrvAPIRequirementItem(api string, item *req
 	}
 	defer resp.Body.Close()
 	byteArray, _ := ioutil.ReadAll(resp.Body)
+
 	if resp.StatusCode != http.StatusOK && resp.StatusCode != http.StatusCreated {
 		return nil, xerrors.Errorf("bad response:%s", string(byteArray))
 	}

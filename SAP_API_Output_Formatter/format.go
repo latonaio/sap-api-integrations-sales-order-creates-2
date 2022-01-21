@@ -65,8 +65,6 @@ func ConvertToHeader(raw []byte, l *logger.Logger) (*Header, error) {
 		CustomerTaxClassification1:     data.CustomerTaxClassification1,
 		TotalCreditCheckStatus:         data.TotalCreditCheckStatus,
 		BillingDocumentDate:            data.BillingDocumentDate,
-		ToHeaderPartner:                data.ToHeaderPartner.ToHeaderPartnerResults[0],
-        ToItem:                         data.ToItem.ToItemResults[0],
 	}
 
 	return header, nil
@@ -127,88 +125,7 @@ func ConvertToItem(raw []byte, l *logger.Logger) (*Item, error) {
 		SDProcessStatus:             data.SDProcessStatus,
 		DeliveryStatus:              data.DeliveryStatus,
 		OrderRelatedBillingStatus:   data.OrderRelatedBillingStatus,
-		ToItemPricingElement:        data.ToItemPricingElement.ToItemPricingElementResults[0],
-        ToItemScheduleLine:          data.ToItemScheduleLine.ToItemScheduleLineResults[0],
 	}
 
 	return item, nil
-}
-
-func ConvertToHeaderPartner(raw []byte, l *logger.Logger) (*HeaderPartner, error) {
-	pm := &responses.HeaderPartner{}
-	err := json.Unmarshal(raw, pm)
-	if err != nil {
-		return nil, xerrors.Errorf("cannot convert to HeaderPartner. raw data is:\n%v\nunmarshal error: %w", string(raw), err)
-	}
-	data := pm.D
-	headerPartner := &HeaderPartner{
-		SalesOrder:      data.SalesOrder,
-		PartnerFunction: data.PartnerFunction,
-		Customer:        data.Customer,
-		Supplier:        data.Supplier,
-	}
-
-	return headerPartner, nil
-}
-
-func ConvertToItemPricingElement(raw []byte, l *logger.Logger) (*ItemPricingElement, error) {
-	pm := &responses.ItemPricingElement{}
-	err := json.Unmarshal(raw, pm)
-	if err != nil {
-		return nil, xerrors.Errorf("cannot convert to ItemPricingElement. raw data is:\n%v\nunmarshal error: %w", string(raw), err)
-	}
-	data := pm.D
-	itemPricingElement := &ItemPricingElement{
-		SalesOrder:                     data.SalesOrder,
-		SalesOrderItem:                 data.SalesOrderItem,
-		PricingProcedureStep:           data.PricingProcedureStep,
-		PricingProcedureCounter:        data.PricingProcedureCounter,
-		ConditionType:                  data.ConditionType,
-		PriceConditionDeterminationDte: data.PriceConditionDeterminationDte,
-		ConditionCalculationType:       data.ConditionCalculationType,
-		ConditionBaseValue:             data.ConditionBaseValue,
-		ConditionRateValue:             data.ConditionRateValue,
-		ConditionCurrency:              data.ConditionCurrency,
-		ConditionQuantity:              data.ConditionQuantity,
-		ConditionQuantityUnit:          data.ConditionQuantityUnit,
-		ConditionCategory:              data.ConditionCategory,
-		PricingScaleType:               data.PricingScaleType,
-		ConditionRecord:                data.ConditionRecord,
-		ConditionSequentialNumber:      data.ConditionSequentialNumber,
-		TaxCode:                        data.TaxCode,
-		ConditionAmount:                data.ConditionAmount,
-		TransactionCurrency:            data.TransactionCurrency,
-		PricingScaleBasis:              data.PricingScaleBasis,
-		ConditionScaleBasisValue:       data.ConditionScaleBasisValue,
-		ConditionScaleBasisUnit:        data.ConditionScaleBasisUnit,
-		ConditionScaleBasisCurrency:    data.ConditionScaleBasisCurrency,
-		ConditionIsManuallyChanged:     data.ConditionIsManuallyChanged,
-	}
-
-	return itemPricingElement, nil
-}
-
-func ConvertToItemScheduleLine(raw []byte, l *logger.Logger) (*ItemScheduleLine, error) {
-	pm := &responses.ItemScheduleLine{}
-	err := json.Unmarshal(raw, pm)
-	if err != nil {
-		return nil, xerrors.Errorf("cannot convert to ItemScheduleLine. raw data is:\n%v\nunmarshal error: %w", string(raw), err)
-	}
-	data := pm.D
-	itemScheduleLine := &ItemScheduleLine{
-		SalesOrder:                    data.SalesOrder,
-		SalesOrderItem:                data.SalesOrderItem,
-		ScheduleLine:                  data.ScheduleLine,
-		RequestedDeliveryDate:         data.RequestedDeliveryDate,
-		ConfirmedDeliveryDate:         data.ConfirmedDeliveryDate,
-		OrderQuantityUnit:             data.OrderQuantityUnit,
-		ScheduleLineOrderQuantity:     data.ScheduleLineOrderQuantity,
-		ConfdOrderQtyByMatlAvailCheck: data.ConfdOrderQtyByMatlAvailCheck,
-		DeliveredQtyInOrderQtyUnit:    data.DeliveredQtyInOrderQtyUnit,
-		OpenConfdDelivQtyInOrdQtyUnit: data.OpenConfdDelivQtyInOrdQtyUnit,
-		CorrectedQtyInOrderQtyUnit:    data.CorrectedQtyInOrderQtyUnit,
-		DelivBlockReasonForSchedLine:  data.DelivBlockReasonForSchedLine,
-	}
-
-	return itemScheduleLine, nil
 }

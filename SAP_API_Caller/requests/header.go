@@ -18,14 +18,14 @@ type Header struct {
 	CustomerPurchaseOrderDate      *string `json:"CustomerPurchaseOrderDate"`
 	SalesOrderDate                 *string `json:"SalesOrderDate"`
 	TotalNetAmount                 *string `json:"TotalNetAmount"`
-	OverallDeliveryStatus          *string `json:"OverallDeliveryStatus"`
-	TotalBlockStatus               *string `json:"TotalBlockStatus"`
-	OverallOrdReltdBillgStatus     *string `json:"OverallOrdReltdBillgStatus"`
-	OverallSDDocReferenceStatus    *string `json:"OverallSDDocReferenceStatus"`
+//	OverallDeliveryStatus          *string `json:"OverallDeliveryStatus"`
+//	TotalBlockStatus               *string `json:"TotalBlockStatus"`
+//	OverallOrdReltdBillgStatus     *string `json:"OverallOrdReltdBillgStatus"`
+//	OverallSDDocReferenceStatus    *string `json:"OverallSDDocReferenceStatus"`
 	TransactionCurrency            *string `json:"TransactionCurrency"`
 	SDDocumentReason               *string `json:"SDDocumentReason"`
 	PricingDate                    *string `json:"PricingDate"`
-	PriceDetnExchangeRate          *string `json:"PriceDetnExchangeRate"`
+//	PriceDetnExchangeRate          *string `json:"PriceDetnExchangeRate"`
 	RequestedDeliveryDate          *string `json:"RequestedDeliveryDate"`
 	ShippingCondition              *string `json:"ShippingCondition"`
 	CompleteDeliveryIsDefined      *bool   `json:"CompleteDeliveryIsDefined"`
@@ -49,11 +49,11 @@ type Header struct {
 	AdditionalCustomerGroup5       *string `json:"AdditionalCustomerGroup5"`
 	CustomerTaxClassification1     *string `json:"CustomerTaxClassification1"`
 	TotalCreditCheckStatus         *string `json:"TotalCreditCheckStatus"`
-	BillingDocumentDate            *string `json:"BillingDocumentDate"`
-	ToHeaderPartner *struct {
-		ToHeaderPartnerResults []*HeaderPartner `json:"results"`
-	} `json:"to_Partner"`
-	ToItem          *struct {
-		ToItemResults []*Item `json:"results"`
-	} `json:"to_Item"`
+//	BillingDocumentDate            *string `json:"BillingDocumentDate"`
+//	ToHeaderPartner *struct {
+//		ToHeaderPartnerResults []*HeaderPartner `json:"results"`
+//	} `json:"to_Partner"`
+//	ToItem          *struct {
+//		ToItemResults []*Item `json:"results"`
+//	} `json:"to_Item"`
 }
