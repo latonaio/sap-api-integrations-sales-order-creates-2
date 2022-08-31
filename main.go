@@ -5,7 +5,7 @@ import (
 	sap_api_input_reader "sap-api-integrations-sales-order-creates/SAP_API_Input_Reader"
 	"sap-api-integrations-sales-order-creates/config"
 
-	"github.com/latonaio/golang-logging-library/logger"
+	"github.com/latonaio/golang-logging-library-for-sap/logger"
 	sap_api_post_header_setup "github.com/latonaio/sap-api-post-header-setup"
 )
 
@@ -20,10 +20,10 @@ func main() {
 		pc,
 		l,
 	)
-	inputSDC           := fr.ReadSDC("./Inputs/SDC_Sales_Order_Header_sample.json")
-	accepter           := getAccepter(inputSDC)
-	header             := inputSDC.ConvertToHeader()
-	item               := inputSDC.ConvertToItem()
+	inputSDC := fr.ReadSDC("./Inputs/SDC_Sales_Order_Header_sample.json")
+	accepter := getAccepter(inputSDC)
+	header := inputSDC.ConvertToHeader()
+	item := inputSDC.ConvertToItem()
 
 	caller.AsyncPostSalesOrder(
 		header,
