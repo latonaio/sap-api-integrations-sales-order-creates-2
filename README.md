@@ -19,7 +19,7 @@ sap-api-integrations-sales-order-creates は、外部システムがクラウド
 sap-api-integrations-sales-order-creates が対応する APIサービス は、次のものです。
 
 * APIサービス概要説明 URL: https://api.sap.com/api/OP_API_SALES_ORDER_SRV_0001/overview  
-* APIサービス名(=baseURL): API_PRODUCT_SRV
+* APIサービス名(=baseURL): API_SALES_ORDER_SRV
 
 ## 本レポジトリ に 含まれる API名
 sap-api-integrations-sales-order-creates には、次の API をコールするためのリソースが含まれています。  
