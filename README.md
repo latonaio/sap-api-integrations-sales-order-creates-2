@@ -38,7 +38,7 @@ accepter において 下記の例のように、データの種別（＝APIの�
 ここでは、"Header", "Item" が指定されています。
 
 ```
-"api_schema": "SAPSalesOrderCreate",
+"api_schema": "SAPSalesOrderCreates",
 "accepter": ["Header", "Item"],
 "sales_order": "1",
 "deleted": false
@@ -49,7 +49,7 @@ accepter において 下記の例のように、データの種別（＝APIの�
 全データを登録する場合、sample.json は以下のように記載します。  
 
 ```
-"api_schema": "SAPSalesOrderCreate",
+"api_schema": "SAPSalesOrderCreates",
 "accepter": ["All"],
 "sales_order": "1",
 "deleted": false
