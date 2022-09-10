@@ -4,7 +4,7 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"SalesOrder": {
-		"SalesOrder": "17",
+		"SalesOrder": "5",
 		"SalesOrderType": "",
 		"SalesOrganization": "",
 		"DistributionChannel": "",
@@ -63,7 +63,7 @@
 			"SalesOrderItemCategory": null,
 			"SalesOrderItemText": null,
 			"PurchaseOrderByCustomer": null,
-			"Material": "51",
+			"Material": "21",
 			"MaterialByCustomer": null,
 			"PricingDate": null,
 			"BillingPlan": null,
@@ -145,6 +145,6 @@
 	},
 	"api_schema": "SAPSalesOrderCreates",
 	"accepter": ["Item"],
-	"sales_order": "17",
+	"sales_order": "5",
 	"deleted": false
 }
