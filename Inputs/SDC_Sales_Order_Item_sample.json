@@ -4,7 +4,7 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"SalesOrder": {
-		"SalesOrder": "5",
+		"SalesOrder": "6",
 		"SalesOrderType": "",
 		"SalesOrganization": "",
 		"DistributionChannel": "",
@@ -71,8 +71,8 @@
 			"RequestedQuantityUnit": null,
 			"OrderQuantityUnit": null,
 			"ConfdDelivQtyInOrderQtyUnit": null,
-			"ItemGrossWeight": "1",
-			"ItemNetWeight": "1",
+			"ItemGrossWeight": "",
+			"ItemNetWeight": "",
 			"ItemWeightUnit": null,
 			"ItemVolume": "1",
 			"ItemVolumeUnit": null,
@@ -88,7 +88,7 @@
 			"ShippingPoint": null,
 			"ShippingType": null,
 			"DeliveryPriority": null,
-			"IncotermsClassification": "FH",
+			"IncotermsClassification": "",
 			"TaxAmount": null,
 			"ProductTaxClassification1": null,
 			"MatlAccountAssignmentGroup": null,
@@ -145,6 +145,6 @@
 	},
 	"api_schema": "SAPSalesOrderCreates",
 	"accepter": ["Item"],
-	"sales_order": "5",
+	"sales_order": "6",
 	"deleted": false
 }
