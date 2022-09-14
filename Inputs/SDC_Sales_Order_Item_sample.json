@@ -59,7 +59,7 @@
 			"Supplier": ""
 		},
 		"SalesOrderItem": {
-			"SalesOrderItem": "10",
+			"SalesOrderItem": "40",
 			"SalesOrderItemCategory": null,
 			"SalesOrderItemText": null,
 			"PurchaseOrderByCustomer": null,
@@ -67,7 +67,7 @@
 			"MaterialByCustomer": null,
 			"PricingDate": null,
 			"BillingPlan": null,
-			"RequestedQuantity": null,
+			"RequestedQuantity": "1",
 			"RequestedQuantityUnit": null,
 			"OrderQuantityUnit": null,
 			"ConfdDelivQtyInOrderQtyUnit": null,
