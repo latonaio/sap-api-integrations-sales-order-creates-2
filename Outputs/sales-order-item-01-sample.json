@@ -3,16 +3,16 @@
 	"function": "sap-api-integrations-sales-order-creates/SAP_API_Caller.(*SAPAPICaller).Item",
 	"level": "INFO",
 	"message": {
-		"SalesOrder": "5",
-		"SalesOrderItem": "10",
+		"SalesOrder": "6",
+		"SalesOrderItem": "40",
 		"SalesOrderItemCategory": "TAN",
 		"SalesOrderItemText": "請求",
 		"PurchaseOrderByCustomer": "Test",
 		"Material": "21",
 		"MaterialByCustomer": "",
-		"PricingDate": "2022-09-10",
+		"PricingDate": "2022-09-14",
 		"BillingPlan": "",
-		"RequestedQuantity": "0",
+		"RequestedQuantity": "1",
 		"RequestedQuantityUnit": "PC",
 		"OrderQuantityUnit": "",
 		"ConfdDelivQtyInOrderQtyUnit": "",
@@ -22,7 +22,7 @@
 		"ItemVolume": "1.000",
 		"ItemVolumeUnit": "",
 		"TransactionCurrency": "EUR",
-		"NetAmount": "0.00",
+		"NetAmount": "1000.00",
 		"MaterialGroup": "01",
 		"MaterialPricingGroup": "",
 		"BillingDocumentDate": "",
@@ -51,5 +51,5 @@
 		"DeliveryStatus": "",
 		"OrderRelatedBillingStatus": ""
 	},
-	"time": "2022-09-10T21:24:31+09:00"
+	"time": "2022-09-14T23:46:18+09:00"
 }
