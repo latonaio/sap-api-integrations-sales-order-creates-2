@@ -99,7 +99,7 @@ func (c *SAPAPICaller) AsyncPostSalesOrder(
 	"function": "sap-api-integrations-sales-order-creates/SAP_API_Caller.(*SAPAPICaller).Header",
 	"level": "INFO",
 	"message": {
-		"SalesOrder": "5",
+		"SalesOrder": "11",
 		"SalesOrderType": "OR1",
 		"SalesOrganization": "0001",
 		"DistributionChannel": "01",
@@ -111,10 +111,10 @@ func (c *SAPAPICaller) AsyncPostSalesOrder(
 		"CreationDate": "",
 		"LastChangeDate": "",
 		"ExternalDocumentID": "",
-		"LastChangeDateTime": "2022-09-10T21:04:13+09:00",
+		"LastChangeDateTime": "2022-09-16T14:04:05+09:00",
 		"PurchaseOrderByCustomer": "Test",
-		"CustomerPurchaseOrderDate": "2022-01-21",
-		"SalesOrderDate": "2022-09-10",
+		"CustomerPurchaseOrderDate": "2022-09-16",
+		"SalesOrderDate": "2022-09-16",
 		"TotalNetAmount": "0.00",
 		"OverallDeliveryStatus": "",
 		"TotalBlockStatus": "",
@@ -122,9 +122,9 @@ func (c *SAPAPICaller) AsyncPostSalesOrder(
 		"OverallSDDocReferenceStatus": "",
 		"TransactionCurrency": "EUR",
 		"SDDocumentReason": "",
-		"PricingDate": "2022-09-10",
+		"PricingDate": "2022-09-16",
 		"PriceDetnExchangeRate": "",
-		"RequestedDeliveryDate": "2022-09-10",
+		"RequestedDeliveryDate": "2022-09-16",
 		"ShippingCondition": "01",
 		"CompleteDeliveryIsDefined": false,
 		"ShippingType": "",
@@ -149,7 +149,7 @@ func (c *SAPAPICaller) AsyncPostSalesOrder(
 		"TotalCreditCheckStatus": "",
 		"BillingDocumentDate": ""
 	},
-	"time": "2022-09-10T21:04:13+09:00"
+	"time": "2022-09-16T14:04:06+09:00"
 }
 
 ```

@@ -4,7 +4,7 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"SalesOrder": {
-		"SalesOrder": "6",
+		"SalesOrder": "8",
 		"SalesOrderType": "",
 		"SalesOrganization": "",
 		"DistributionChannel": "",
@@ -59,7 +59,7 @@
 			"Supplier": ""
 		},
 		"SalesOrderItem": {
-			"SalesOrderItem": "40",
+			"SalesOrderItem": "10",
 			"SalesOrderItemCategory": null,
 			"SalesOrderItemText": null,
 			"PurchaseOrderByCustomer": null,
